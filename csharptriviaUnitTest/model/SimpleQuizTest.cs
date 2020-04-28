@@ -13,6 +13,12 @@ namespace csharptriviaUnitTest.model
             Quiz quiz = new SimpleQuiz();
             Assert.AreEqual(0, quiz.NumberOfQuestions);
         }
+        [TestMethod]
+        public void Test()
+        {
+            Quiz quiz = SimpleQuizTestFixture.BuildSimpleMathQuiz();
+            Assert.AreEqual(2, quiz.NumberOfQuestions);
+        }
 
     }
 }

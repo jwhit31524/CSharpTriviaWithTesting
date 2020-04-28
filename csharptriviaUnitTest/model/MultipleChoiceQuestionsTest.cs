@@ -11,12 +11,10 @@ namespace csharptriviaUnitTest
         private const string questionText = "What is 2+2?";
         private readonly string[] answerOptions = new string[] { "2", "4", "5" };
 
- 
-
         [TestMethod]
         public void CreateMultipleChoiceQuestion()
         {
-            Question question = GetTwoPlusTwoQuestion();
+            Question question = SimpleQuizTestFixture.BuildTwoPlusTwoMultipleChoiceQuestion();
 
             Assert.AreEqual(questionText, question.QuestionText);
             Assert.AreEqual("2", question.AnswerOptions[0]);
@@ -27,7 +25,7 @@ namespace csharptriviaUnitTest
         [TestMethod]
         public void UnansweredQuestionIsNotCorrect()
         {
-            Question question = GetTwoPlusTwoQuestion();
+            Question question = SimpleQuizTestFixture.BuildTwoPlusTwoMultipleChoiceQuestion();
 
             Assert.IsFalse(question.IsAnswered);
             Assert.IsFalse(question.IsCorrectAnswer);
@@ -36,7 +34,7 @@ namespace csharptriviaUnitTest
         [TestMethod]
         public void AnsweredQuestionIsNotCorrect()
         {
-            Question question = GetTwoPlusTwoQuestion();
+            Question question = SimpleQuizTestFixture.BuildTwoPlusTwoMultipleChoiceQuestion();
             question.SelectOptionIndex(2);
 
             Assert.IsTrue(question.IsAnswered);
@@ -47,22 +45,17 @@ namespace csharptriviaUnitTest
         [TestMethod]
         public void AnsweredQuestionIsCorrect()
         {
-            Question question = GetTwoPlusTwoQuestion();
+            Question question = SimpleQuizTestFixture.BuildTwoPlusTwoMultipleChoiceQuestion();
             question.SelectOptionIndex(1);
 
             Assert.IsTrue(question.IsAnswered);
             Assert.IsTrue(question.IsCorrectAnswer);
         }
 
-        private MultipleChoiceQuestion GetTwoPlusTwoQuestion()
-        {
-            return new MultipleChoiceQuestion(questionText, answerOptions, 1);
-        }
-
         [TestMethod]
         public void CreateNewMultipleChoiceQuestion()
         {
-            Question question = new MultipleChoiceQuestion("What is 3 + 3?", new string[]{ "6", "8", "9" }, 0);
+            Question question = SimpleQuizTestFixture.BuildThreePlusThreeMultipleChoiceQuestion();
             question.SelectOptionIndex(0);
             Assert.IsTrue(question.IsCorrectAnswer);
         }

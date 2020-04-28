@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="model\SimpleQuizTest.cs" />
     <Compile Include="model\MultipleChoiceQuestionsTest.cs" />
+    <Compile Include="model\SimpleQuizTestFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
