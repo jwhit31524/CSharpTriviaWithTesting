@@ -31,7 +31,7 @@ namespace csharptriviaUnitTest.model
             get { return _selectedAnswer != null;  } 
         }
 
-        public void SelectOptionIndex(int AnswerIndex)
+        public void SelectAnswerOption(int AnswerIndex)
         {
             _selectedAnswer = AnswerIndex;
         }

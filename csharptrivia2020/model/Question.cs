@@ -7,6 +7,6 @@
         bool IsCorrectAnswer { get; }
         bool IsAnswered { get; }
 
-        void SelectOptionIndex(int v);
+        void SelectAnswerOption(int v);
     }
 }

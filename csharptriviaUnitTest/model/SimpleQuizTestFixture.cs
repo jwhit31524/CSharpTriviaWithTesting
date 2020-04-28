@@ -10,7 +10,7 @@ namespace csharptriviaUnitTest.model
     public class SimpleQuizTestFixture
     {
 
-        public static Quiz BuildSimpleMathQuiz()
+        public static Quiz BuildSimpleQuiz()
         {
             SimpleQuiz quiz = new SimpleQuiz();
             quiz.AddQuestion(BuildTwoPlusTwoMultipleChoiceQuestion());

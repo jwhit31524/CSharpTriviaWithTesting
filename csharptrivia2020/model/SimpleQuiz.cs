@@ -8,7 +8,18 @@ namespace csharptriviaUnitTest
     public class SimpleQuiz : Quiz
     {
         private readonly List<Question> _questions = new List<Question>();
-        public int CorrectAnswers => 0;
+        public int CorrectAnswers {
+            get {
+                int total = 0;
+                foreach (var question in _questions)
+                {
+                    if (question.IsCorrectAnswer)
+                        total++;
+                }
+
+                return total;
+            }
+        }
 
         public Question CurrentQuestion => _questions[0];
 

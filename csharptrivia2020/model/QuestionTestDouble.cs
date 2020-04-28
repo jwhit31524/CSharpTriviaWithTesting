@@ -19,7 +19,7 @@ namespace csharptrivia2020
             AnswerOptions = answerOptions;
         }
 
-        public void SelectOptionIndex(int v)
+        public void SelectAnswerOption(int v)
         {
             throw new System.NotImplementedException();
         }
