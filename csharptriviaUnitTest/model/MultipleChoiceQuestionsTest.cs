@@ -1,5 +1,6 @@
 ﻿using System;
 using csharptrivia2020.model;
+using csharptriviaUnitTest.model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace csharptriviaUnitTest
@@ -10,12 +11,7 @@ namespace csharptriviaUnitTest
         private const string questionText = "What is 2+2?";
         private readonly string[] answerOptions = new string[] { "2", "4", "5" };
 
-        [TestMethod]
-        public void NewSimpleQuizHasZeroQuestions()
-        {
-            Quiz quiz = new SimpleQuiz();
-            Assert.AreEqual(0, quiz.NumberOfQuestions);
-        }
+ 
 
         [TestMethod]
         public void CreateMultipleChoiceQuestion()

@@ -1,6 +1,6 @@
 ﻿using csharptrivia2020.model;
 
-namespace csharptriviaUnitTest
+namespace csharptriviaUnitTest.model
 {
     public class MultipleChoiceQuestion : Question
     {
