@@ -41,5 +41,23 @@ namespace csharptriviaUnitTest.model
             Assert.AreEqual(1, quiz.CorrectAnswers);
         }
 
+        [TestMethod]
+        public void MovingToNextQuestion()
+        {
+            Quiz quiz = SimpleQuizTestFixture.BuildSimpleQuiz();
+            quiz.NextQuestion();
+
+            Question question = quiz.CurrentQuestion;
+            Assert.AreEqual("What is 3+3?", question.QuestionText);
+            Assert.AreEqual("6", question.AnswerOptions[0]);
+            Assert.AreEqual("8", question.AnswerOptions[1]);
+            Assert.AreEqual("9", question.AnswerOptions[2]);
+            Assert.AreEqual(2, quiz.CurrentQuestionNumber);
+            Assert.IsFalse(quiz.OnFirstQuestion);
+            Assert.IsTrue(quiz.OnLastQuestion);
+
+        }
+
+
     }
 }

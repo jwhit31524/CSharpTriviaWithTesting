@@ -24,7 +24,7 @@ namespace csharptriviaUnitTest.model
         }
         public static Question BuildThreePlusThreeMultipleChoiceQuestion()
         {
-            return new MultipleChoiceQuestion("What is 3 + 3?", new string[] { "6", "8", "9" }, 0);
+            return new MultipleChoiceQuestion("What is 3+3?", new string[] { "6", "8", "9" }, 0);
         }
     }
 }

@@ -8,6 +8,8 @@ namespace csharptriviaUnitTest
     public class SimpleQuiz : Quiz
     {
         private readonly List<Question> _questions = new List<Question>();
+        private int _currentIndex = 0;
+
         public int CorrectAnswers {
             get {
                 int total = 0;
@@ -21,9 +23,9 @@ namespace csharptriviaUnitTest
             }
         }
 
-        public Question CurrentQuestion => _questions[0];
+        public Question CurrentQuestion => _questions[_currentIndex];
 
-        public int CurrentQuestionNumber => 1;
+        public int CurrentQuestionNumber => _currentIndex + 1;
 
 
         public void AddQuestion(Question question)
@@ -33,15 +35,15 @@ namespace csharptriviaUnitTest
 
         public int NumberOfQuestions => _questions.Count;
 
-        public bool OnFirstQuestion => true;
+        public bool OnFirstQuestion => _currentIndex == 0;
 
-        public bool OnLastQuestion => false;
+        public bool OnLastQuestion => CurrentQuestionNumber >= _questions.Count;
 
         public int Score => 0;
 
         public void NextQuestion()
         {
-            throw new System.NotImplementedException();
+            _currentIndex++;
         }
 
         public void PreviousQuestion()
