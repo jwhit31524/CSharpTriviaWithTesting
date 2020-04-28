@@ -8,11 +8,11 @@ namespace csharptriviaUnitTest
     public class SimpleQuiz : Quiz
     {
         private readonly List<Question> _questions = new List<Question>();
-        public int CorrectAnswers => throw new System.NotImplementedException();
+        public int CorrectAnswers => 0;
 
-        public Question CurrentQuestion => throw new System.NotImplementedException();
+        public Question CurrentQuestion => _questions[0];
 
-        public int CurrentQuestionNumber => throw new System.NotImplementedException();
+        public int CurrentQuestionNumber => 1;
 
 
         public void AddQuestion(Question question)
@@ -22,9 +22,11 @@ namespace csharptriviaUnitTest
 
         public int NumberOfQuestions => _questions.Count;
 
-        public bool OnFirstQuestion => throw new System.NotImplementedException();
+        public bool OnFirstQuestion => true;
 
-        public bool OnLastQuestion => throw new System.NotImplementedException();
+        public bool OnLastQuestion => false;
+
+        public int Score => 0;
 
         public void NextQuestion()
         {

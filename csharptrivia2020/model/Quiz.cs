@@ -8,6 +8,7 @@
         int NumberOfQuestions { get; }
         bool OnFirstQuestion { get; }
         bool OnLastQuestion { get; }
+        int Score { get; }
 
         void NextQuestion();
         void PreviousQuestion();

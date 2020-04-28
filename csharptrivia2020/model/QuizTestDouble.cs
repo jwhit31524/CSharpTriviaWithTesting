@@ -40,6 +40,8 @@ namespace csharptrivia2020
             { }
         }
 
+        public int Score => throw new NotImplementedException();
+
         private QuestionTestDouble[] _questionList = new QuestionTestDouble[5];
         private int _currrentIndex;
 
