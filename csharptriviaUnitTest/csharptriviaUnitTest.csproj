@@ -51,7 +51,7 @@
   <ItemGroup>
     <Compile Include="MultipleChoiceQuestion.cs" />
     <Compile Include="SimpleQuiz.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="model\MultipleChoiceQuestionsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

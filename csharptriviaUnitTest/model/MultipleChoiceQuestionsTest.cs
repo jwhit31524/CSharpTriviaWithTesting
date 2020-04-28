@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace csharptriviaUnitTest
 {
     [TestClass]
-    public class UnitTest1
+    public class MultipleChoiceQuestionsTest
     {
         private const string questionText = "What is 2+2?";
         private readonly string[] answerOptions = new string[] { "2", "4", "5" };
@@ -70,8 +70,6 @@ namespace csharptriviaUnitTest
             question.SelectOptionIndex(0);
             Assert.IsTrue(question.IsCorrectAnswer);
         }
-
-
 
     }
 }
