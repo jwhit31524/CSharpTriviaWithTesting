@@ -6,7 +6,6 @@
         string QuestionText { get; }
         bool IsCorrectAnswer { get; }
         bool IsAnswered { get; }
-
-        void SelectAnswerOption(int v);
+        int? SelectAnswerOption { get; set; }
     }
 }

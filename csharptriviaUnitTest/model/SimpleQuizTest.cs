@@ -39,7 +39,7 @@ namespace csharptriviaUnitTest.model
             Assert.AreEqual("2", question.AnswerOptions[0]);
             Assert.AreEqual("4", question.AnswerOptions[1]);
             Assert.AreEqual("5", question.AnswerOptions[2]);
-            question.SelectAnswerOption(1);
+            question.SelectAnswerOption = 1;
 
             Assert.AreEqual(1, quiz.CorrectAnswers);
         }
@@ -89,6 +89,7 @@ namespace csharptriviaUnitTest.model
             Assert.AreEqual(2, quiz.CurrentQuestionNumber);
 
         }
+      
 
 
 

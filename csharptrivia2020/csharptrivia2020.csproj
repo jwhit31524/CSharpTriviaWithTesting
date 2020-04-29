@@ -63,7 +63,6 @@
     <Compile Include="view\QuestionForm.Designer.cs">
       <DependentUpon>QuestionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="model\QuestionTestDouble.cs" />
     <Compile Include="model\Quiz.cs" />
     <Compile Include="model\QuizTestDouble.cs" />
     <Compile Include="view\ResultsForm.cs">
