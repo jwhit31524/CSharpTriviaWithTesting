@@ -20,6 +20,7 @@ namespace csharptriviaUnitTest
                 }
 
                 return total;
+
             }
         }
 
@@ -43,12 +44,14 @@ namespace csharptriviaUnitTest
 
         public void NextQuestion()
         {
-            _currentIndex++;
+            if (_currentIndex < NumberOfQuestions - 1) 
+                _currentIndex++;
         }
 
         public void PreviousQuestion()
         {
-            throw new System.NotImplementedException();
+            if (_currentIndex > 0) 
+                _currentIndex--;
         }
     }
 }

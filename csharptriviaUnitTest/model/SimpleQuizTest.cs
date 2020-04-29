@@ -7,6 +7,9 @@ namespace csharptriviaUnitTest.model
     [TestClass]
     public class SimpleQuizTest
     {
+        private const string Question1Text = "What is 2+2?";
+        private const string Question2Text = "What is 3+3?";
+
         [TestMethod]
         public void NewSimpleQuizHasZeroQuestions()
         {
@@ -32,7 +35,7 @@ namespace csharptriviaUnitTest.model
         {
             Quiz quiz = SimpleQuizTestFixture.BuildSimpleQuiz();
             Question question = quiz.CurrentQuestion;
-            Assert.AreEqual("What is 2+2?", quiz.CurrentQuestion.QuestionText);
+            Assert.AreEqual(Question1Text, quiz.CurrentQuestion.QuestionText);
             Assert.AreEqual("2", question.AnswerOptions[0]);
             Assert.AreEqual("4", question.AnswerOptions[1]);
             Assert.AreEqual("5", question.AnswerOptions[2]);
@@ -48,7 +51,7 @@ namespace csharptriviaUnitTest.model
             quiz.NextQuestion();
 
             Question question = quiz.CurrentQuestion;
-            Assert.AreEqual("What is 3+3?", question.QuestionText);
+            Assert.AreEqual(Question2Text, question.QuestionText);
             Assert.AreEqual("6", question.AnswerOptions[0]);
             Assert.AreEqual("8", question.AnswerOptions[1]);
             Assert.AreEqual("9", question.AnswerOptions[2]);
@@ -57,6 +60,36 @@ namespace csharptriviaUnitTest.model
             Assert.IsTrue(quiz.OnLastQuestion);
 
         }
+        [TestMethod]
+        public void MovingToPreviousQuestion()
+        {
+
+            Quiz quiz = SimpleQuizTestFixture.BuildSimpleQuiz();
+            quiz.NextQuestion();
+            Assert.AreEqual(2, quiz.CurrentQuestionNumber);
+            quiz.PreviousQuestion();
+
+            Question question = quiz.CurrentQuestion;
+            Assert.AreEqual(Question1Text, quiz.CurrentQuestion.QuestionText);
+            Assert.AreEqual(1, quiz.CurrentQuestionNumber);
+            Assert.IsTrue(quiz.OnFirstQuestion);
+            Assert.IsFalse(quiz.OnLastQuestion);
+
+        }
+        [TestMethod]
+        public void PreventIndexOutOfBounds()
+        {
+            
+            Quiz quiz = SimpleQuizTestFixture.BuildSimpleQuiz();
+            quiz.PreviousQuestion();
+            Assert.AreEqual(1, quiz.CurrentQuestionNumber);
+            quiz.NextQuestion();
+            Assert.AreEqual(2, quiz.CurrentQuestionNumber);
+            quiz.NextQuestion();
+            Assert.AreEqual(2, quiz.CurrentQuestionNumber);
+
+        }
+
 
 
     }
