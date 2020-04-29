@@ -47,7 +47,6 @@
             this.QuestionNumberLabel.Size = new System.Drawing.Size(95, 13);
             this.QuestionNumberLabel.TabIndex = 1;
             this.QuestionNumberLabel.Text = "[Question Number]";
-        
             // 
             // QuestionTextLabel
             // 
@@ -57,7 +56,6 @@
             this.QuestionTextLabel.Size = new System.Drawing.Size(133, 13);
             this.QuestionTextLabel.TabIndex = 3;
             this.QuestionTextLabel.Text = "[Question Text Goes Here]";
-     
             // 
             // panel1
             // 
@@ -136,7 +134,6 @@
             this.Text = "QuestionForm";
             this.Activated += new System.EventHandler(this.QuestionForm_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.QuestionForm_FormClosed);
-         
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

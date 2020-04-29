@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace csharptriviaUnitTest
+namespace csharptrivia2020.model
 {
     public class SimpleQuiz : Quiz
     {

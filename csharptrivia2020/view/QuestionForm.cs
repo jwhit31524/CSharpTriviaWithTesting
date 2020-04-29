@@ -46,6 +46,7 @@ namespace csharptrivia2020.view
 
         private void NextQuestionButton_Click(object sender, EventArgs e)
         {
+            quiz.CurrentQuestion.SelectAnswerOption(GetSelectedOption());
             // Law of Demeter (Ask, don't tell)
             if (quiz.OnLastQuestion)
             {
@@ -55,6 +56,14 @@ namespace csharptrivia2020.view
                 quiz.NextQuestion();
                 RefreshForm();
             }
+        }
+
+        private int GetSelectedOption()
+        {
+            if (AnswerA.Checked) return 0;
+            if (AnswerB.Checked) return 1;
+            if (AnswerC.Checked) return 2;
+            return -1;
         }
 
         private void QuestionForm_Activated(object sender, EventArgs e)
@@ -76,6 +85,11 @@ namespace csharptrivia2020.view
 
         private void RefreshForm()
         {
+            AnswerA.Checked = false;
+            AnswerB.Checked = false;
+            AnswerC.Checked = false;
+
+
             var question = quiz.CurrentQuestion;
             QuestionNumberLabel.Text = $"Question {quiz.CurrentQuestionNumber} of {quiz.NumberOfQuestions}";
             QuestionTextLabel.Text = $"{question.QuestionText}";
