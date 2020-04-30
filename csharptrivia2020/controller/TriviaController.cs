@@ -20,9 +20,10 @@ namespace csharptrivia2020.controller
             resultsForm = new ResultsForm(this, mainForm);
         }
 
-        internal void StartNewGame()
+        internal void StartNewGame(string QuizTopicName)
         {
-            quiz = new QuizTestDouble();
+            var quizTestProvider = new QuizTestProvider();
+            quiz = quizTestProvider.GetTestByName(QuizTopicName);
             mainForm.Hide();
             resultsForm.Hide();
             questionForm.Show(quiz);

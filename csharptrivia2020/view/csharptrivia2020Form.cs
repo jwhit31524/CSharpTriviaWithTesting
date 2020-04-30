@@ -19,16 +19,23 @@ namespace csharptrivia2020.view
         {
             InitializeComponent();
             triviaController = new TriviaController(this);
+            listBox1.Items.Add("General Knowledge Quiz");
+            listBox1.Items.Add("Math Quiz");
         }
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            triviaController.StartNewGame();
+            triviaController.StartNewGame(listBox1.SelectedItem.ToString());
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

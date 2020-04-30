@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controller\QuizTestProvider.cs" />
     <Compile Include="model\MultipleChoiceQuestion.cs" />
     <Compile Include="model\SimpleQuiz.cs" />
     <Compile Include="view\CSharpTrivia2020Form.cs">
