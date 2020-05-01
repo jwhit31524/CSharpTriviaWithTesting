@@ -29,12 +29,15 @@ namespace csharptrivia2020.controller
             questionForm.Show(quiz);
         }
 
+        internal void CloseTheApplication()
+        {
+            mainForm.Close();
+        }
+
         public void ShowViewResults()
         {
             questionForm.Hide();
             resultsForm.Show(quiz);
-
-
         }
 
         internal void ShowViewHome()

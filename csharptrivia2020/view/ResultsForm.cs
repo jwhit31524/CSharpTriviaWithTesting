@@ -33,7 +33,7 @@ namespace csharptrivia2020.view
 
         private void CloseGameButton_Click(object sender, EventArgs e)
         {
-            triviaController.ShowViewHome();
+            triviaController.CloseTheApplication();
         }
 
         private void PlayAgainButton_Click(object sender, EventArgs e)
