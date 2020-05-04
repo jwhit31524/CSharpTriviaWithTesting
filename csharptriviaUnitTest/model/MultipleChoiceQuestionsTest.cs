@@ -35,7 +35,7 @@ namespace csharptriviaUnitTest
         public void AnsweredQuestionIsNotCorrect()
         {
             Question question = SimpleQuizTestFixture.BuildTwoPlusTwoMultipleChoiceQuestion();
-            question.SelectAnswerOption(2);
+            question.SelectAnswerOption = 2;
 
             Assert.IsTrue(question.IsAnswered);
             Assert.IsFalse(question.IsCorrectAnswer);
@@ -46,7 +46,7 @@ namespace csharptriviaUnitTest
         public void AnsweredQuestionIsCorrect()
         {
             Question question = SimpleQuizTestFixture.BuildTwoPlusTwoMultipleChoiceQuestion();
-            question.SelectAnswerOption(1);
+            question.SelectAnswerOption = 1;
 
             Assert.IsTrue(question.IsAnswered);
             Assert.IsTrue(question.IsCorrectAnswer);
@@ -56,7 +56,7 @@ namespace csharptriviaUnitTest
         public void CreateNewMultipleChoiceQuestion()
         {
             Question question = SimpleQuizTestFixture.BuildThreePlusThreeMultipleChoiceQuestion();
-            question.SelectAnswerOption(0);
+            question.SelectAnswerOption = 0;
             Assert.IsTrue(question.IsCorrectAnswer);
         }
 
