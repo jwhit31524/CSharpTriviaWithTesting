@@ -12,6 +12,7 @@ namespace csharptrivia2020.controller
         private readonly Form mainForm;
         private readonly QuestionForm questionForm;
         private readonly ResultsForm resultsForm;
+        private readonly ManageQuestionsForm manageQuestionsForm;
         private Quiz quiz;
         private readonly QuizContext db;
      
@@ -21,23 +22,18 @@ namespace csharptrivia2020.controller
             this.mainForm = mainForm;
 
             db = new QuizContext();
-            db.QuizEntities.Add(new QuizEntity
-            {
-                Id = 1,
-                Name = "Test Quiz"
-            });
-            db.SaveChanges();
+        
 
             questionForm = new QuestionForm(this, mainForm);
             resultsForm = new ResultsForm(this, mainForm);
+            manageQuestionsForm = new ManageQuestionsForm(this, mainForm);
         }
 
         internal void StartNewGame(string QuizTopicName)
         {
             var quizTestProvider = new QuizTestProvider();
             quiz = quizTestProvider.GetTestByName(QuizTopicName);
-            mainForm.Hide();
-            resultsForm.Hide();
+            HideAllForms();
             questionForm.Show(quiz);
         }
 
@@ -48,13 +44,27 @@ namespace csharptrivia2020.controller
 
         public void ShowViewResults()
         {
-            questionForm.Hide();
+            HideAllForms();
             resultsForm.Show(quiz);
+        }
+
+        internal void ShowQuestionManager()
+        {
+            HideAllForms();
+            manageQuestionsForm.Show();
+        }
+
+        private void HideAllForms()
+        {
+            mainForm.Hide();
+            resultsForm.Hide();
+            questionForm.Hide();
+            manageQuestionsForm.Hide();
         }
 
         internal void ShowViewHome()
         {
-            resultsForm.Hide();
+            HideAllForms();
             mainForm.Show();
         }
     }

@@ -12,7 +12,6 @@ namespace csharptrivia2020.database
         public DbSet<QuizEntity> QuizEntities { get; set; }
         public DbSet<QuestionEntity> QuestionEntities { get; set; }
         public DbSet<QuestionAnswerEntity> QuestionAnswerEntities { get; set; }
-
         public QuizContext() : base("name=QuizDatabase") { }
     }
 }

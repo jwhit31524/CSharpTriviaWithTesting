@@ -59,6 +59,12 @@
     <Compile Include="controller\QuizTestProvider.cs" />
     <Compile Include="database\QuizContext.cs" />
     <Compile Include="database\QuizEntity.cs" />
+    <Compile Include="ManageQuestionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageQuestionsForm.Designer.cs">
+      <DependentUpon>ManageQuestionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="model\MultipleChoiceQuestion.cs" />
     <Compile Include="model\SimpleQuiz.cs" />
     <Compile Include="view\CSharpTrivia2020Form.cs">
@@ -85,6 +91,9 @@
       <DependentUpon>ResultsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="controller\TriviaController.cs" />
+    <EmbeddedResource Include="ManageQuestionsForm.resx">
+      <DependentUpon>ManageQuestionsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\CSharpTrivia2020Form.resx">
       <DependentUpon>CSharpTrivia2020Form.cs</DependentUpon>
     </EmbeddedResource>

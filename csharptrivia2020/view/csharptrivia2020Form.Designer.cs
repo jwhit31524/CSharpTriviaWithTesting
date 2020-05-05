@@ -33,6 +33,7 @@
             this.ExitButton = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.NavigateToQuestionsFormButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // StartButton
@@ -82,11 +83,22 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Quiz Topics:";
             // 
+            // NavigateToQuestionsFormButton
+            // 
+            this.NavigateToQuestionsFormButton.Location = new System.Drawing.Point(377, 361);
+            this.NavigateToQuestionsFormButton.Name = "NavigateToQuestionsFormButton";
+            this.NavigateToQuestionsFormButton.Size = new System.Drawing.Size(168, 23);
+            this.NavigateToQuestionsFormButton.TabIndex = 4;
+            this.NavigateToQuestionsFormButton.Text = "Navigate to Questions Form";
+            this.NavigateToQuestionsFormButton.UseVisualStyleBackColor = true;
+            this.NavigateToQuestionsFormButton.Click += new System.EventHandler(this.NavigateToQuestionsFormButton_Click);
+            // 
             // CSharpTrivia2020Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.NavigateToQuestionsFormButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.ExitButton);
@@ -106,6 +118,7 @@
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button NavigateToQuestionsFormButton;
     }
 }
 

@@ -37,5 +37,10 @@ namespace csharptrivia2020.view
         {
 
         }
+
+        private void NavigateToQuestionsFormButton_Click(object sender, EventArgs e)
+        {
+            triviaController.ShowQuestionManager();
+        }
     }
 }
